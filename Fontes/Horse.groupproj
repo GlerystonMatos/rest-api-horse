@@ -3,7 +3,10 @@
         <ProjectGuid>{65D8F616-49E0-454F-BDD0-CEBC02BB7D5B}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="HorseApiRest.dproj">
+        <Projects Include="Aplicacao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Console.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -14,23 +17,32 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="HorseApiRest">
-        <MSBuild Projects="HorseApiRest.dproj"/>
+    <Target Name="Aplicacao">
+        <MSBuild Projects="Aplicacao.dproj"/>
     </Target>
-    <Target Name="HorseApiRest:Clean">
-        <MSBuild Projects="HorseApiRest.dproj" Targets="Clean"/>
+    <Target Name="Aplicacao:Clean">
+        <MSBuild Projects="Aplicacao.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="HorseApiRest:Make">
-        <MSBuild Projects="HorseApiRest.dproj" Targets="Make"/>
+    <Target Name="Aplicacao:Make">
+        <MSBuild Projects="Aplicacao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Console">
+        <MSBuild Projects="Console.dproj"/>
+    </Target>
+    <Target Name="Console:Clean">
+        <MSBuild Projects="Console.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Console:Make">
+        <MSBuild Projects="Console.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="HorseApiRest"/>
+        <CallTarget Targets="Aplicacao;Console"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HorseApiRest:Clean"/>
+        <CallTarget Targets="Aplicacao:Clean;Console:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HorseApiRest:Make"/>
+        <CallTarget Targets="Aplicacao:Make;Console:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

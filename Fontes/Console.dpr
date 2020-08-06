@@ -1,4 +1,4 @@
-program HorseApiRest;
+program Console;
 
 {$APPTYPE CONSOLE}
 
@@ -6,6 +6,7 @@ program HorseApiRest;
 
 uses
   Horse,
+  Horse.Jhonson,
   System.SysUtils,
   HorseRotas in 'HorseRotas.pas',
   ApiMethods in 'ApiMethods.pas';
@@ -16,6 +17,7 @@ var
 begin
   try
     App := THorse.Create(8084);
+    App.Use(Jhonson);
     ConfiguraRotas(App);
     App.Start;
   except
