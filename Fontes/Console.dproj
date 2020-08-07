@@ -5,7 +5,7 @@
         <FrameworkType>None</FrameworkType>
         <MainSource>Console.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Console</AppType>
@@ -34,6 +34,12 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>Console</SanitizedProjectName>
@@ -47,13 +53,16 @@
         <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\horse\src;modules\jhonson\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
         <DCC_UsePackage>dxPSLnksRS20;cxGridRS20;dxPSdxLCLnkRS20;dxPScxExtCommonRS20;FireDACSqliteDriver;FireDACDSDriver;cxPageControlRS20;DBXSqliteDriver;FireDACPgDriver;fmx;BaseBBoxD20;IndySystem;DCEF_XE6;TeeDB;tethering;inetdbbde;vclib;DBXInterBaseDriver;DataSnapClient;XMLBBoxD20;DataSnapServer;DataSnapCommon;DataSnapProviderClient;DBXSybaseASEDriver;DbxCommonDriver;dxLayoutControlRS20;vclimg;dbxcds;DatasnapConnectorsFreePascal;MetropolisUILiveTile;dxPScxSchedulerLnkRS20;dxPSCoreRS20;vcldb;vcldsnap;dxPSTeeChartRS20;RemProt_XE6;fmxFireDAC;DLibWinDXE6_Vcl;DBXDb2Driver;madSecurity_;DBXOracleDriver;CustomIPTransport;cxExportRS20;vclribbon;dxServerModeRS20;dsnap;IndyIPServer;IndyCore;vcl;fmxase;RLibWinDXE6;dxComnRS20;DBXMSSQLDriver;IndyIPCommon;CloudService;FmxTeeUI;FireDACIBDriver;CodeSiteExpressPkg;dxDBXServerModeRS20;DataSnapFireDAC;FireDACDBXDriver;soapserver;dxPScxGridLnkRS20;dxPSDBTeeChartRS20;inetdbxpress;cxSchedulerGridRS20;dxADOServerModeRS20;dsnapxml;FireDACInfxDriver;FireDACDb2Driver;adortl;SSLBBoxCliD20;madBasic_;FireDACASADriver;bindcompfmx;VeicaLib;vcldbx;FireDACODBCDriver;RESTBackendComponents;madKernel_;rtl;dbrtl;DbxClientDriver;FireDACCommon;bindcomp;inetdb;Tee;DBXOdbcDriver;vclFireDAC;madDisAsm_;cxSpreadSheetRS20;xmlrtl;DataSnapNativeClient;svnui;ibxpress;madShell_;XMLBBoxSecD20;IndyProtocols;DBXMySQLDriver;dxPScxCommonRS20;dxPScxSSLnkRS20;SSLBBoxCliIndy10D20;FireDACCommonDriver;vclactnband;bindengine;bindcompdbx;soaprtl;FMXTee;dxGDIPlusRS20;bindcompvcl;TeeUI;vclie;madExcept_;cxSchedulerRS20;FireDACADSDriver;vcltouch;cxEditorsRS20;LibDelphiXE6;VclSmp;FireDACMSSQLDriver;FireDAC;DBXInformixDriver;Intraweb;PGPBBoxD20;VCLRESTComponents;DataSnapConnectors;DataSnapServerMidas;dsnapcon;DBXFirebirdDriver;inet;cxLibraryRS20;cxDataRS20;fmxobj;FireDACMySQLDriver;soapmidas;vclx;dxCoreRS20;DBXSybaseASADriver;svn;FireDACOracleDriver;fmxdae;RESTComponents;RestDatawareCORE;bdertl;dxThemeRS20;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <Icon_MainIcon>..\Imagens\Icone.ico</Icon_MainIcon>
+        <Manifest_File>(None)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -67,7 +76,6 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <DCC_ExeOutput>..\</DCC_ExeOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Manifest_File>(None)</Manifest_File>
         <Icon_MainIcon>..\Imagens\Icone.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -75,6 +83,11 @@
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>..\Imagens\Icone.ico</Icon_MainIcon>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
