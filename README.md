@@ -1,3 +1,5 @@
+![horse](https://github.com/GlerystonMatos/rest-api-horse/workflows/horse/badge.svg)
+
 # rest-api-horse
 Exemplo de api REST delphi usando horse.
 
