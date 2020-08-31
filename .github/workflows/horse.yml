@@ -23,7 +23,11 @@ jobs:
       run: npm install -g newman
     - name: Verify Newman Installation
       run: newman --version
-    - name: Launch application console
+    - name: Launch Console Application
       run: start ./Console.exe
-    - name: Running Postman Tests
+    - name: Running Postman Tests Console Application
       run: newman run ./Postman/rest-api-delphi.postman_collection.json --environment ./Postman/horse-console-application.postman_environment.json --insecure
+    - name: Launch VCL Application
+      run: start ./Aplicacao.exe
+    - name: Running Postman Tests VCL Application
+      run: newman run ./Postman/rest-api-delphi.postman_collection.json --environment ./Postman/horse-application.postman_environment.json --insecure

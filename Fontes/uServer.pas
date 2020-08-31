@@ -35,7 +35,7 @@ procedure TfrmServer.Start;
 begin
   THorse.Use(Jhonson);
   ConfiguraRotas;
-  THorse.Listen(9000);
+  THorse.Listen(9001);
   FActive := True;
 end;
 
@@ -66,6 +66,7 @@ end;
 procedure TfrmServer.FormShow(Sender: TObject);
 begin
   lbVersao.Caption := 'Version: 2.0.0';
+  btnStartStop.Click;
 end;
 
 end.
