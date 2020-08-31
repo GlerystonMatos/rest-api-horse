@@ -3,21 +3,21 @@ unit HorseRotas;
 interface
 
 uses
-  Horse.Core, ApiMethods;
+  Horse, ApiMethods;
 
-procedure ConfiguraRotas(Horse: THorseCore);
+procedure ConfiguraRotas;
 
 implementation
 
-procedure ConfiguraRotas(Horse: THorseCore);
+procedure ConfiguraRotas;
 begin
-  Horse.Get('/', RotaDefault);
-  Horse.Get('/Eco', RotaEco);
-  Horse.Get('/Soma', RotaSoma);
-  Horse.Get('/Usuario', RotaUsuarioGet);
-  Horse.Post('/Usuario', RotaUsuarioPost);
-  Horse.Put('/Usuario', RotaUsuarioPut);
-  Horse.Delete('/Usuario', RotaUsuarioDelete);
+  THorse.Get('/', RotaDefault);
+  THorse.Get('/Eco', RotaEco);
+  THorse.Get('/Soma', RotaSoma);
+  THorse.Get('/Usuario', RotaUsuarioGet);
+  THorse.Post('/Usuario', RotaUsuarioPost);
+  THorse.Put('/Usuario', RotaUsuarioPut);
+  THorse.Delete('/Usuario', RotaUsuarioDelete);
 end;
 
 end.

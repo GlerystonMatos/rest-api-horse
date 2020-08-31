@@ -7,19 +7,16 @@ program Console;
 uses
   Horse,
   Horse.Jhonson,
+  Horse.Constants,
   System.SysUtils,
   HorseRotas in 'HorseRotas.pas',
   ApiMethods in 'ApiMethods.pas';
 
-var
-  App: THorse;
-
 begin
   try
-    App := THorse.Create(8083);
-    App.Use(Jhonson);
-    ConfiguraRotas(App);
-    App.Start;
+    THorse.Use(Jhonson);
+    ConfiguraRotas;
+    THorse.Listen(9000);
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
