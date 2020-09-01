@@ -9,6 +9,9 @@
         <Projects Include="Console.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Autenticacao.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="Console:Make">
         <MSBuild Projects="Console.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Autenticacao">
+        <MSBuild Projects="Autenticacao.dproj"/>
+    </Target>
+    <Target Name="Autenticacao:Clean">
+        <MSBuild Projects="Autenticacao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Autenticacao:Make">
+        <MSBuild Projects="Autenticacao.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Aplicacao;Console"/>
+        <CallTarget Targets="Aplicacao;Console;Autenticacao"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Aplicacao:Clean;Console:Clean"/>
+        <CallTarget Targets="Aplicacao:Clean;Console:Clean;Autenticacao:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Aplicacao:Make;Console:Make"/>
+        <CallTarget Targets="Aplicacao:Make;Console:Make;Autenticacao:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

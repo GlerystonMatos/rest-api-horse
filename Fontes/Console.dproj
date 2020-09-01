@@ -5,7 +5,7 @@
         <FrameworkType>None</FrameworkType>
         <MainSource>Console.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Console</AppType>
@@ -50,7 +50,7 @@
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\horse\src;modules\jhonson\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\delphi-jose-jwt\Samples\Basic;modules\delphi-jose-jwt\Samples\Console;modules\delphi-jose-jwt\Samples\CustomClaims;modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;modules\delphi-jose-jwt\Tests\Source;modules\handle-exception\src;modules\horse\src;modules\horse-compression\src;modules\horse-jwt\src;modules\jhonson\src</DCC_UnitSearchPath>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <VerInfo_Locale>1046</VerInfo_Locale>

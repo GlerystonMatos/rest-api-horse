@@ -5,7 +5,6 @@ interface
 uses
   Horse, System.SysUtils, System.JSON, Horse.Commons;
 
-procedure LancarErro(Res: THorseResponse; Msg: string);
 procedure RotaDefault(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 procedure RotaEco(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 procedure RotaSoma(Req: THorseRequest; Res: THorseResponse; Next: TProc);
@@ -15,15 +14,6 @@ procedure RotaUsuarioPut(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 procedure RotaUsuarioDelete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 
 implementation
-
-procedure LancarErro(Res: THorseResponse; Msg: string);
-var
-  objeto: TJSONObject;
-begin
-  objeto := TJSONObject.Create;
-  objeto.AddPair(TJSONPair.Create('mensagem', Msg));
-  Res.Send<TJSONObject>(objeto).Status(THTTPStatus.InternalServerError);
-end;
 
 procedure RotaDefault(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 begin
@@ -41,7 +31,7 @@ begin
              '</html>').Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 
@@ -60,7 +50,7 @@ begin
     Res.Send<TJSONObject>(objeto).Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 
@@ -84,7 +74,7 @@ begin
     Res.Send<TJSONObject>(objeto).Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 
@@ -116,7 +106,7 @@ begin
     Res.Send<TJSONArray>(lista).Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 
@@ -143,7 +133,7 @@ begin
     Res.Send<TJSONObject>(objeto).Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 
@@ -170,7 +160,7 @@ begin
     Res.Send<TJSONObject>(objeto).Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 
@@ -189,7 +179,7 @@ begin
     Res.Send<TJSONObject>(objeto).Status(THTTPStatus.OK);
   except
     on E: Exception do
-      LancarErro(Res, E.Message);
+      raise Exception.Create(E.Message);
   end;
 end;
 

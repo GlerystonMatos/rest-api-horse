@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls,
   Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Imaging.jpeg, Horse,
-  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Horse.Jhonson, HorseRotas, System.SysUtils;
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Horse.Jhonson, HorseRotas, System.SysUtils,
+  Horse.HandleException, Horse.Compression;
 
 type
   TfrmServer = class(TForm)
@@ -33,7 +34,9 @@ implementation
 
 procedure TfrmServer.Start;
 begin
+  THorse.Use(Compression());
   THorse.Use(Jhonson);
+  THorse.Use(HandleException);
   ConfiguraRotas;
   THorse.Listen(9001);
   FActive := True;

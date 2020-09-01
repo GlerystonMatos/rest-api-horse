@@ -6,15 +6,20 @@ program Console;
 
 uses
   Horse,
+  Horse.JWT,
   Horse.Jhonson,
-  Horse.Constants,
+  Horse.Compression,
+  Horse.HandleException,
   System.SysUtils,
   HorseRotas in 'HorseRotas.pas',
   ApiMethods in 'ApiMethods.pas';
 
 begin
   try
+    THorse.Use(Compression());
     THorse.Use(Jhonson);
+    THorse.Use(HandleException);
+    THorse.Use(HorseJWT('rest-api-horse'));
     ConfiguraRotas;
     THorse.Listen(9000);
   except

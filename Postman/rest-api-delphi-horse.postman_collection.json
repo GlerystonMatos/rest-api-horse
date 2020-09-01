@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "bff75b80-90f3-42f4-b259-7c20158381b7",
+		"name": "rest-api-delphi-horse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12c71ae0-0516-4dc8-93d3-dc815fee70b6",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}\r",
+							"\r",
+							"pm.environment.set(\"token\", responseJSON.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-auth}}/Auth",
+					"host": [
+						"{{url-auth}}"
+					],
+					"path": [
+						"Auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0befb750-d325-44ca-8b97-49ad25d106cc",
+						"exec": [
+							"tests[\"status é igual a 401\"] = responseCode.code === 401;\r",
+							"tests[\"Token not found\"] = responseBody === \"Token not found\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Default",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18eb0de7-9b95-4005-9893-4841b0c4c704",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eco",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d424c90-f9b6-4c32-abb2-c468d4684b0d",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Eco?value=Gleryston Matos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Eco"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "Gleryston Matos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Soma",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4aa4034-d520-445e-a3a1-88974fc8df1a",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Soma?value01=10&value02=20",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Soma"
+					],
+					"query": [
+						{
+							"key": "value01",
+							"value": "10"
+						},
+						{
+							"key": "value02",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0a7e1049-364b-416c-94af-2405d46fda00",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51f7e0ba-25d6-46c5-baeb-afb91f11a377",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gleryston\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b354a244-79c0-4360-b10c-19d87cea483d",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gleryston\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed35a7cf-febb-493e-ad49-0c16317c81a5",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Usuario?nome=Gleryston",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Usuario"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Gleryston"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>Aplicacao.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -53,7 +53,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>Aplicacao</SanitizedProjectName>
-        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\horse\src;modules\jhonson\src</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\delphi-jose-jwt\Samples\Basic;modules\delphi-jose-jwt\Samples\Console;modules\delphi-jose-jwt\Samples\CustomClaims;modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;modules\delphi-jose-jwt\Tests\Source;modules\handle-exception\src;modules\horse\src;modules\horse-compression\src;modules\horse-jwt\src;modules\jhonson\src</DCC_UnitSearchPath>
         <VerInfo_Locale>1046</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
