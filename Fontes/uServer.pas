@@ -6,7 +6,7 @@ uses
   Winapi.Windows, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls,
   Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Imaging.jpeg, Horse,
   Vcl.ExtCtrls, Vcl.Imaging.pngimage, Horse.Jhonson, HorseRotas, System.SysUtils,
-  Horse.HandleException, Horse.Compression;
+  Horse.HandleException, Horse.Compression, Horse.JWT;
 
 type
   TfrmServer = class(TForm)
@@ -37,6 +37,7 @@ begin
   THorse.Use(Compression());
   THorse.Use(Jhonson);
   THorse.Use(HandleException);
+  THorse.Use(HorseJWT('rest-api-horse'));
   ConfiguraRotas;
   THorse.Listen(9001);
   FActive := True;
