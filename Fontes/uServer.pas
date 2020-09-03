@@ -34,10 +34,11 @@ implementation
 
 procedure TfrmServer.Start;
 begin
-  THorse.Use(Compression());
-  THorse.Use(Jhonson);
-  THorse.Use(HandleException);
-  THorse.Use(HorseJWT('rest-api-horse'));
+  THorse
+    .Use(Compression())
+    .Use(Jhonson)
+    .Use(HandleException)
+    .Use(HorseJWT('rest-api-horse'));
   ConfiguraRotas;
   THorse.Listen(9001);
   FActive := True;

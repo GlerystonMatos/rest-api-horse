@@ -18,17 +18,18 @@ implementation
 procedure RotaDefault(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 begin
   try
-    Res.Send('<!DOCTYPE html>' +
-             '<html>' +
-               '<head>' +
-                 '<meta charset="UTF-8" />' +
-                 '<title>Horse</title>' +
-               '</head>' +
-               '<body>' +
-                 '<h1>Horse</h1>' +
-                 '<h2>Server Status - Online</h2>' +
-               '</body>' +
-             '</html>').Status(THTTPStatus.OK);
+    Res.Send(
+      '<!DOCTYPE html>' +
+      '<html>' +
+        '<head>' +
+          '<meta charset="UTF-8" />' +
+          '<title>Horse</title>' +
+        '</head>' +
+        '<body>' +
+          '<h1>Horse</h1>' +
+          '<h2>Server Status - Online</h2>' +
+        '</body>' +
+      '</html>').Status(THTTPStatus.OK);
   except
     on E: Exception do
       raise Exception.Create(E.Message);

@@ -6,21 +6,26 @@ program Autenticacao;
 
 uses
   Horse,
+  System.JSON,
   Horse.Jhonson,
   JOSE.Core.JWT,
+  Horse.Constants,
+  System.SysUtils,
   JOSE.Core.Builder,
   Horse.Compression,
-  Horse.HandleException,
-  System.JSON,
-  System.SysUtils;
+  Horse.HandleException;
 
 begin
   try
-    THorse.Use(Compression());
-    THorse.Use(Jhonson);
-    THorse.Use(HandleException);
+    THorse
+      .Use(Compression())
+      .Use(Jhonson)
+      .Use(HandleException);
 
-    THorse.Get('/Auth',
+    THorse
+      .Group
+      .Prefix('/Api')
+        .Get('/Auth',
       procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
       var
         token: TJWT;
@@ -45,7 +50,11 @@ begin
         end;
       end);
 
-    THorse.Listen(9002);
+    THorse.Listen(9002,
+      procedure(Horse: THorse)
+      begin
+        Writeln(Format(START_RUNNING, [Horse.Host, Horse.Port]));
+      end);
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);

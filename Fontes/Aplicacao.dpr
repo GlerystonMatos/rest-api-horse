@@ -2,9 +2,9 @@ program Aplicacao;
 
 uses
   Vcl.Forms,
-  uServer in 'uServer.pas' {frmServer},
   HorseRotas in 'HorseRotas.pas',
-  ApiMethods in 'ApiMethods.pas';
+  ApiMethods in 'ApiMethods.pas',
+  uServer in 'uServer.pas' {frmServer};
 
 {$R *.res}
 

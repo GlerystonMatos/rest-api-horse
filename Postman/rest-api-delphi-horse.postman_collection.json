@@ -34,11 +34,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url-auth}}/Auth",
+					"raw": "{{url-auth}}/Api/Auth",
 					"host": [
 						"{{url-auth}}"
 					],
 					"path": [
+						"Api",
 						"Auth"
 					]
 				}
@@ -67,11 +68,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/",
+					"raw": "{{url}}/Api/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						""
 					]
 				}
@@ -106,11 +108,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/",
+					"raw": "{{url}}/Api/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						""
 					]
 				}
@@ -154,11 +157,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Eco?value=Gleryston Matos",
+					"raw": "{{url}}/Api/Eco?value=Gleryston Matos",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						"Eco"
 					],
 					"query": [
@@ -208,11 +212,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Soma?value01=10&value02=20",
+					"raw": "{{url}}/Api/Soma?value01=10&value02=20",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						"Soma"
 					],
 					"query": [
@@ -266,11 +271,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Usuario",
+					"raw": "{{url}}/Api/Usuario",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						"Usuario"
 					]
 				}
@@ -323,11 +329,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/Usuario",
+					"raw": "{{url}}/Api/Usuario",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						"Usuario"
 					]
 				}
@@ -380,11 +387,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/Usuario",
+					"raw": "{{url}}/Api/Usuario",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						"Usuario"
 					]
 				}
@@ -428,11 +436,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Usuario?nome=Gleryston",
+					"raw": "{{url}}/Api/Usuario?nome=Gleryston",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
+						"Api",
 						"Usuario"
 					],
 					"query": [
