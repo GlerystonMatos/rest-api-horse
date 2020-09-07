@@ -5,17 +5,17 @@ interface
 uses
   Horse, System.SysUtils, System.JSON, Horse.Commons;
 
-procedure RotaDefault(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-procedure RotaEco(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-procedure RotaSoma(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-procedure RotaUsuarioGet(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-procedure RotaUsuarioPost(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-procedure RotaUsuarioPut(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-procedure RotaUsuarioDelete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Default(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Eco(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Soma(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioGet(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioPost(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioPut(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioDelete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 
 implementation
 
-procedure RotaDefault(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Default(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 begin
   try
     Res.Send(
@@ -36,7 +36,7 @@ begin
   end;
 end;
 
-procedure RotaEco(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Eco(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
   value: string;
   objeto: TJSONObject;
@@ -55,7 +55,7 @@ begin
   end;
 end;
 
-procedure RotaSoma(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Soma(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
   value01: Integer;
   value02: Integer;
@@ -79,7 +79,7 @@ begin
   end;
 end;
 
-procedure RotaUsuarioGet(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioGet(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
   lista: TJSONArray;
   objeto01: TJSONObject;
@@ -111,7 +111,7 @@ begin
   end;
 end;
 
-procedure RotaUsuarioPost(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioPost(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
   senha: string;
   usuario: string;
@@ -138,7 +138,7 @@ begin
   end;
 end;
 
-procedure RotaUsuarioPut(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioPut(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
   senha: string;
   usuario: string;
@@ -165,7 +165,7 @@ begin
   end;
 end;
 
-procedure RotaUsuarioDelete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure UsuarioDelete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
   value: string;
   objeto: TJSONObject;

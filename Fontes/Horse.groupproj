@@ -3,13 +3,16 @@
         <ProjectGuid>{65D8F616-49E0-454F-BDD0-CEBC02BB7D5B}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="Aplicacao.dproj">
+        <Projects Include="VCL.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Console.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Autenticacao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DUnitX.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -20,14 +23,14 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="Aplicacao">
-        <MSBuild Projects="Aplicacao.dproj"/>
+    <Target Name="VCL">
+        <MSBuild Projects="VCL.dproj"/>
     </Target>
-    <Target Name="Aplicacao:Clean">
-        <MSBuild Projects="Aplicacao.dproj" Targets="Clean"/>
+    <Target Name="VCL:Clean">
+        <MSBuild Projects="VCL.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Aplicacao:Make">
-        <MSBuild Projects="Aplicacao.dproj" Targets="Make"/>
+    <Target Name="VCL:Make">
+        <MSBuild Projects="VCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="Console">
         <MSBuild Projects="Console.dproj"/>
@@ -47,14 +50,23 @@
     <Target Name="Autenticacao:Make">
         <MSBuild Projects="Autenticacao.dproj" Targets="Make"/>
     </Target>
+    <Target Name="DUnitX">
+        <MSBuild Projects="DUnitX.dproj"/>
+    </Target>
+    <Target Name="DUnitX:Clean">
+        <MSBuild Projects="DUnitX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DUnitX:Make">
+        <MSBuild Projects="DUnitX.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Aplicacao;Console;Autenticacao"/>
+        <CallTarget Targets="VCL;Console;Autenticacao;DUnitX"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Aplicacao:Clean;Console:Clean;Autenticacao:Clean"/>
+        <CallTarget Targets="VCL:Clean;Console:Clean;Autenticacao:Clean;DUnitX:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Aplicacao:Make;Console:Make;Autenticacao:Make"/>
+        <CallTarget Targets="VCL:Make;Console:Make;Autenticacao:Make;DUnitX:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

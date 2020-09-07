@@ -30,6 +30,8 @@ jobs:
     - name: Running Postman Tests Console Application
       run: newman run ./Postman/rest-api-delphi-horse.postman_collection.json --environment ./Postman/horse-console-application.postman_environment.json --insecure
     - name: Launch VCL Application
-      run: start ./Aplicacao.exe
+      run: start ./VCL.exe
     - name: Running Postman Tests VCL Application
       run: newman run ./Postman/rest-api-delphi-horse.postman_collection.json --environment ./Postman/horse-application.postman_environment.json --insecure
+    - name: Launch DUnitX
+      run: ./DUnitX.exe

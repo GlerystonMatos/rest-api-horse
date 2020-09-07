@@ -14,14 +14,14 @@ begin
   THorse
     .Group
       .Prefix('/Api')
-      .Get('/', RotaDefault)
-      .Get('/Eco', RotaEco)
-      .Get('/Soma', RotaSoma)
+      .Get('/', Default)
+      .Get('/Eco', Eco)
+      .Get('/Soma', Soma)
       .Route('/Usuario')
-        .Get(RotaUsuarioGet)
-        .Post(RotaUsuarioPost)
-        .Put(RotaUsuarioPut)
-        .Delete(RotaUsuarioDelete);
+        .Get(UsuarioGet)
+        .Post(UsuarioPost)
+        .Put(UsuarioPut)
+        .Delete(UsuarioDelete);
 end;
 
 end.

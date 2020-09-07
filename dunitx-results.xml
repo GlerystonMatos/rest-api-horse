@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="D:\Projetos\rest-api-horse\DUnitX.exe" total="16" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2020-09-07" time="2.262">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="DUnitX.exe" executed="true" result="Success" success="True" time="2.262" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="ApiMethodsTest" executed="true" result="Success" success="True" time="2.262" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TApiMethodsTest" executed="True" result="Success" success="True" time="2.262" >
+                <results>
+                  <test-case name="TestAuth" executed="True" result="Success" success="True" time="0.026" asserts="0" />
+                  <test-case name="TestDefault" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestUnauthorized" executed="True" result="Success" success="True" time="2.216" asserts="0" />
+                  <test-case name="TestEco.Test01" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="TestEco.Test02" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestEco.Test03" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestEco.Test04" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestSoma.Test01" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestSoma.Test02" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestUsuarioGet" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestUsuarioPost.Test01" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestUsuarioPost.Test02" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestUsuarioPut.Test01" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="TestUsuarioPut.Test02" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="TestUsuarioDelete.Test01" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="TestUsuarioDelete.Test02" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>
