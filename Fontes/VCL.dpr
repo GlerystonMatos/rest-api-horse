@@ -2,6 +2,11 @@ program VCL;
 
 uses
   Vcl.Forms,
+  madExcept,
+  madLinkDisAsm,
+  madListModules,
+  madListHardware,
+  madListProcesses,
   HorseRotas in 'HorseRotas.pas',
   ApiMethods in 'ApiMethods.pas',
   uServer in 'uServer.pas' {frmServer};

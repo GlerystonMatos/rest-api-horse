@@ -8,9 +8,9 @@ uses
   {$IFDEF TESTINSIGHT}
   TestInsight.DUnitX,
   {$ENDIF }
+  DUnitX.TestFramework,
   DUnitX.Loggers.Console,
   DUnitX.Loggers.Xml.NUnit,
-  DUnitX.TestFramework,
   ApiMethodsTest in 'ApiMethodsTest.pas';
 
 var

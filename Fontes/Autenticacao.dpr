@@ -7,6 +7,7 @@ program Autenticacao;
 uses
   Horse,
   System.JSON,
+  Horse.Commons,
   Horse.Jhonson,
   JOSE.Core.JWT,
   Horse.Constants,

@@ -77,6 +77,7 @@
         <DCC_ExeOutput>..\</DCC_ExeOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>..\Imagens\Icone.ico</Icon_MainIcon>
+        <DCC_MapFile>3</DCC_MapFile>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
