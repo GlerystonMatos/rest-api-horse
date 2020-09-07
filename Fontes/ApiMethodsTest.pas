@@ -273,7 +273,7 @@ begin
   idHTTP := TIdHTTP.Create(nil);
   try
     idHTTP.Request.CustomHeaders.Values['Authorization'] := 'Bearer ' + FToken;
-    responseBody := idHTTP.Delete('http://localhost:9000/Api/Usuario?nome=' + aNome + '');
+    responseBody := idHTTP.Get('http://localhost:9000/Api/Usuario?nome=' + aNome + '');
     response := TJSONObject.ParseJSONValue(responseBody) as TJSONObject;
 
     Assert.AreEqual(idHTTP.ResponseCode, 200);
