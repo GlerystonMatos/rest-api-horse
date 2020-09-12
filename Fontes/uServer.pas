@@ -5,8 +5,9 @@ interface
 uses
   Winapi.Windows, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls,
   Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Imaging.jpeg, Horse,
-  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Horse.Jhonson, HorseRotas, System.SysUtils,
-  Horse.HandleException, Horse.Compression, Horse.JWT;
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Horse.Jhonson, System.SysUtils, Horse.JWT,
+  Controllers.Login, Horse.HandleException, Horse.Compression,
+  Controllers.ApiMethods, Controllers.Usuario;
 
 type
   TfrmServer = class(TForm)
@@ -38,8 +39,12 @@ begin
     .Use(Compression())
     .Use(Jhonson)
     .Use(HandleException)
-    .Use(HorseJWT('rest-api-horse'));
-  ConfiguraRotas;
+    .Use('/Api',HorseJWT('rest-api-horse'));
+
+  Controllers.Login.Registry;
+  Controllers.ApiMethods.Registry;
+  Controllers.Usuario.Registry;
+
   THorse.Listen(9001);
   FActive := True;
 end;
@@ -70,7 +75,7 @@ end;
 
 procedure TfrmServer.FormShow(Sender: TObject);
 begin
-  lbVersao.Caption := 'Version: 2.0.0';
+  lbVersao.Caption := 'Version: 2.0.1';
   btnStartStop.Click;
 end;
 

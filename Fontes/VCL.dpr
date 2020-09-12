@@ -4,11 +4,14 @@ uses
   Vcl.Forms,
   madExcept,
   madLinkDisAsm,
-  madListModules,
   madListHardware,
   madListProcesses,
-  HorseRotas in 'HorseRotas.pas',
-  ApiMethods in 'ApiMethods.pas',
+  madListModules,
+  Services.Login in 'Services\Services.Login.pas',
+  Services.Usuario in 'Services\Services.Usuario.pas',
+  Controllers.Login in 'Controllers\Controllers.Login.pas',
+  Controllers.Usuario in 'Controllers\Controllers.Usuario.pas',
+  Controllers.ApiMethods in 'Controllers\Controllers.ApiMethods.pas',
   uServer in 'uServer.pas' {frmServer};
 
 {$R *.res}

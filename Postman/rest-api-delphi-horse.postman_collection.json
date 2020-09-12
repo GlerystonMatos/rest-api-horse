@@ -34,13 +34,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url-auth}}/Api/Auth",
+					"raw": "{{url}}/Auth/Token",
 					"host": [
-						"{{url-auth}}"
+						"{{url}}"
 					],
 					"path": [
-						"Api",
-						"Auth"
+						"Auth",
+						"Token"
 					]
 				}
 			},
@@ -88,7 +88,8 @@
 					"script": {
 						"id": "18eb0de7-9b95-4005-9893-4841b0c4c704",
 						"exec": [
-							""
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"tests[\"Server Status - OnlineToken not found\"] = responseBody === \"Server Status - Online\";"
 						],
 						"type": "text/javascript"
 					}
@@ -157,19 +158,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Api/Eco?value=Gleryston Matos",
+					"raw": "{{url}}/Api/Eco/Gleryston Matos",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"Api",
-						"Eco"
-					],
-					"query": [
-						{
-							"key": "value",
-							"value": "Gleryston Matos"
-						}
+						"Eco",
+						"Gleryston Matos"
 					]
 				}
 			},
@@ -212,22 +208,73 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Api/Soma?value01=10&value02=20",
+					"raw": "{{url}}/Api/Soma/10/20",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"Api",
-						"Soma"
+						"Soma",
+						"10",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtrai",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "785014a2-a0ca-4fb5-bc67-cbf7627049a7",
+						"exec": [
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"try { \r",
+							"    responseJSON = JSON.parse(responseBody); \r",
+							"    tests['resposta é um JSON válido'] = true;\r",
+							"}\r",
+							"catch (e) { \r",
+							"    responseJSON = {}; \r",
+							"    tests['resposta não é um JSON válido'] = false;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Api/Subtrai?value01=20&value02=10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Api",
+						"Subtrai"
 					],
 					"query": [
 						{
 							"key": "value01",
-							"value": "10"
+							"value": "20"
 						},
 						{
 							"key": "value02",
-							"value": "20"
+							"value": "10"
 						}
 					]
 				}
@@ -291,7 +338,7 @@
 					"script": {
 						"id": "51f7e0ba-25d6-46c5-baeb-afb91f11a377",
 						"exec": [
-							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
+							"tests[\"status é igual a 201\"] = responseCode.code === 201;\r",
 							"\r",
 							"try { \r",
 							"    responseJSON = JSON.parse(responseBody); \r",
@@ -436,19 +483,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Api/Usuario?nome=Gleryston",
+					"raw": "{{url}}/Api/Usuario/Gleryston",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"Api",
-						"Usuario"
-					],
-					"query": [
-						{
-							"key": "nome",
-							"value": "Gleryston"
-						}
+						"Usuario",
+						"Gleryston"
 					]
 				}
 			},

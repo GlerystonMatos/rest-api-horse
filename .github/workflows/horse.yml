@@ -23,9 +23,7 @@ jobs:
       run: npm install -g newman
     - name: Verify Newman Installation
       run: newman --version
-    - name: Launch Console Application (Autenticacao)
-      run: start ./Autenticacao.exe
-    - name: Launch Console Application (Console)
+    - name: Launch Console Application
       run: start ./Console.exe
     - name: Running Postman Tests Console Application
       run: newman run ./Postman/rest-api-delphi-horse.postman_collection.json --environment ./Postman/horse-console-application.postman_environment.json --insecure

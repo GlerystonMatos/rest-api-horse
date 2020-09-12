@@ -9,9 +9,6 @@
         <Projects Include="Console.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Autenticacao.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="DUnitX.dproj">
             <Dependencies/>
         </Projects>
@@ -41,15 +38,6 @@
     <Target Name="Console:Make">
         <MSBuild Projects="Console.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Autenticacao">
-        <MSBuild Projects="Autenticacao.dproj"/>
-    </Target>
-    <Target Name="Autenticacao:Clean">
-        <MSBuild Projects="Autenticacao.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Autenticacao:Make">
-        <MSBuild Projects="Autenticacao.dproj" Targets="Make"/>
-    </Target>
     <Target Name="DUnitX">
         <MSBuild Projects="DUnitX.dproj"/>
     </Target>
@@ -60,13 +48,13 @@
         <MSBuild Projects="DUnitX.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="VCL;Console;Autenticacao;DUnitX"/>
+        <CallTarget Targets="VCL;Console;DUnitX"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="VCL:Clean;Console:Clean;Autenticacao:Clean;DUnitX:Clean"/>
+        <CallTarget Targets="VCL:Clean;Console:Clean;DUnitX:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="VCL:Make;Console:Make;Autenticacao:Make;DUnitX:Make"/>
+        <CallTarget Targets="VCL:Make;Console:Make;DUnitX:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

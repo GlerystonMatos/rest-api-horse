@@ -51,7 +51,7 @@
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <DCC_UnitSearchPath>$(DUnitX);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>$(DUnitX);modules\.dcp;modules\.dcu;modules;modules\dataset-serialize\samples\basic\src;modules\dataset-serialize\samples\configuration\src;modules\dataset-serialize\samples\master-detail\src;modules\dataset-serialize\src\core;modules\dataset-serialize\src\helpers;modules\dataset-serialize\src\providers;modules\dataset-serialize\src\singletons;modules\dataset-serialize\src\types;modules\delphi-jose-jwt\Samples\Basic;modules\delphi-jose-jwt\Samples\Console;modules\delphi-jose-jwt\Samples\CustomClaims;modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;modules\delphi-jose-jwt\Tests\Source;modules\handle-exception\src;modules\horse\src;modules\horse-compression\src;modules\horse-jwt\src;modules\jhonson\src;modules\restrequest4delphi\src\core;modules\restrequest4delphi\src\interfaces;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <SanitizedProjectName>DUnitX</SanitizedProjectName>
         <VerInfo_Locale>1046</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -95,7 +95,13 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="ApiMethodsTest.pas"/>
+        <DCCReference Include="Services\Services.Login.pas"/>
+        <DCCReference Include="Services\Services.Usuario.pas"/>
+        <DCCReference Include="Controllers\Controllers.Login.pas"/>
+        <DCCReference Include="Controllers\Controllers.Usuario.pas"/>
+        <DCCReference Include="Controllers\Controllers.ApiMethods.pas"/>
+        <DCCReference Include="Tests\Controllers\Tests.Controllers.Usuario.pas"/>
+        <DCCReference Include="Tests\Controllers\Tests.Controllers.ApiMethods.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
