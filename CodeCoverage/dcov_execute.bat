@@ -1,0 +1,1 @@
+"..\CodeCoverage\CodeCoverage.exe" -e "..\DUnitX.exe" -m "..\DUnitX.map" -ife -uf dcov_units.lst -spf dcov_paths.lst -od ".\Output\" -html

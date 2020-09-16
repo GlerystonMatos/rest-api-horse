@@ -67,3 +67,6 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# Diretório de geração dos relatórios de cobertura de código. 
+CodeCoverage/Output

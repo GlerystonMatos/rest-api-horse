@@ -33,3 +33,5 @@ jobs:
       run: newman run ./Postman/rest-api-delphi-horse.postman_collection.json --environment ./Postman/horse-application.postman_environment.json --insecure
     - name: Launch DUnitX
       run: ./DUnitX.exe
+    - name: Generate Coverage Reports
+      run: .\CodeCoverage\CodeCoverage.exe -e .\DUnitX.exe -m .\DUnitX.map -ife -uf .\CodeCoverage\dcov_units.lst -spf .\CodeCoverage\dcov_paths.lst

@@ -37,7 +37,7 @@ var
   content: TJSONObject;
 begin
   FToken := '';
-  response := TRequest.New.BaseURL('http://localhost:9000/Auth/Token')
+  response := TRequest.New.BaseURL('http://localhost:9002/Auth/Token')
     .Accept('application/json')
     .Get;
 
@@ -55,7 +55,7 @@ var
   response: IResponse;
 begin
   try
-    response := TRequest.New.BaseURL('http://localhost:9000/Api/')
+    response := TRequest.New.BaseURL('http://localhost:9002/Api/')
       .Accept('application/json')
       .Get;
   except
@@ -68,7 +68,7 @@ procedure TApiMethodsTest.TestDefault;
 var
   response: IResponse;
 begin
-  response := TRequest.New.BaseURL('http://localhost:9000/Api/')
+  response := TRequest.New.BaseURL('http://localhost:9002/Api/')
     .Accept('application/json')
     .Token('Bearer ' + FToken)
     .Get;
@@ -82,7 +82,7 @@ var
   response: IResponse;
   content: TJSONObject;
 begin
-  response := TRequest.New.BaseURL('http://localhost:9000/Api/Eco/' + Value)
+  response := TRequest.New.BaseURL('http://localhost:9002/Api/Eco/' + Value)
     .Accept('application/json')
     .Token('Bearer ' + FToken)
     .Get;
@@ -101,7 +101,7 @@ var
   response: IResponse;
   content: TJSONObject;
 begin
-  response := TRequest.New.BaseURL('http://localhost:9000/Api/Soma/' + Value01 + '/' + Value02)
+  response := TRequest.New.BaseURL('http://localhost:9002/Api/Soma/' + Value01 + '/' + Value02)
     .Accept('application/json')
     .Token('Bearer ' + FToken)
     .Get;
@@ -120,7 +120,7 @@ var
   response: IResponse;
   content: TJSONObject;
 begin
-  response := TRequest.New.BaseURL('http://localhost:9000/Api/Subtrai?value01=' + Value01 + '&value02=' + Value02)
+  response := TRequest.New.BaseURL('http://localhost:9002/Api/Subtrai?value01=' + Value01 + '&value02=' + Value02)
     .Accept('application/json')
     .Token('Bearer ' + FToken)
     .Get;
