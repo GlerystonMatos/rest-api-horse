@@ -28,6 +28,7 @@ var
 
 begin
   try
+    ReportMemoryLeaksOnShutdown := True;
     TDUnitX.CheckCommandLine;
 
     runner := TDUnitX.CreateRunner;

@@ -275,6 +275,11 @@
 						{
 							"key": "value02",
 							"value": "10"
+						},
+						{
+							"key": "fghfghfg",
+							"value": "dfgdfg",
+							"disabled": true
 						}
 					]
 				}
@@ -347,7 +352,9 @@
 							"catch (e) { \r",
 							"    responseJSON = {}; \r",
 							"    tests['resposta não é um JSON válido'] = false;\r",
-							"}"
+							"}\r",
+							"\r",
+							"tests[\"mensagem ok\"] = responseJSON.mensagem === \"Usuário Gleryston com a senha 123, foi criado com sucesso\";"
 						],
 						"type": "text/javascript"
 					}
