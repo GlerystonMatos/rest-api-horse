@@ -13,7 +13,7 @@
 					"script": {
 						"id": "12c71ae0-0516-4dc8-93d3-dc815fee70b6",
 						"exec": [
-							"tests[\"status é igual a 200\"] = responseCode.code === 201;\r",
+							"tests[\"status é igual a 200\"] = responseCode.code === 200;\r",
 							"\r",
 							"try { \r",
 							"    responseJSON = JSON.parse(responseBody); \r",
